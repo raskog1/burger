@@ -1,0 +1,20 @@
+<h1>Burger Test</h1>
+
+<h2>This should list all burgers</h2>
+
+<ul>
+    {{#each burgers}}
+    <li>{{this.burger_name}}</li>
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="burger-name">Burger Name:</label>
+        <input type="text" id="burger-name">
+    </div>
+
+    <button type="submit">Add Burger</button>
+</form>
