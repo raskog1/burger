@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body {
+  background-image: url("../img/bobs-background.png");
+}
+
+ul li {
+  margin-left: 40px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin: 10px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  max-height: 100vh;
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+.devoured-burgers,
+.avail-burgers {
+  background-color: lightblue;
+  margin: 5px;
+}
+
+.avail-burgers {
+  flex: 1;
+  flex-grow: 1;
+}
+
+.devoured-burgers {
+  flex: 2;
+  flex-grow: 1;
+}
+
+.forms {
+  margin: auto;
+  width: 40%;
+  height: 100px;
+  background-color: lightblue;
+  text-align: center;
+}

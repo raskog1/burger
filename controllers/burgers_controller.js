@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   burger.show((data) => {
+    //console.log(data);
+
     const allBurgers = {
       burgers: data,
     };
@@ -13,12 +15,23 @@ router.get("/", (req, res) => {
 }); //How is this working?  We get all the burger data and assign to burgers?
 
 router.post("/api/burgers", (req, res) => {
-  burger.create("burger_name", req.body.name, function (data) {
+  burger.create("burger_name", req.body.name, (data) => {
     res.json(data);
   });
 });
 
-router.put("/api/burgers/:id", function (req, res) {});
+router.put("/api/burgers/:id", function (req, res) {
+  const condition = "id = " + req.params.id;
+
+  burger.update(condition, { devoured: req.body.devoured }, function (data) {
+    if (data.changedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
 //   router.put("/api/cats/:id", function (req, res) {
 //     var condition = "id = " + req.params.id;
 

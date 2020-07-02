@@ -1,7 +1,7 @@
 const connection = require("./connection");
 const express = require("express"); //might not be needed....
 
-// Adds quotes to our results for easy input into mySQL db
+// Transitions an object into SQL syntax
 function objToSql(ob) {
   const arr = [];
 
@@ -21,7 +21,7 @@ function objToSql(ob) {
 
 const orm = {
   selectAll: function (tableInput, cb) {
-    const queryString = "SELECT * FROM " + tableInput + ";";
+    const queryString = `SELECT * FROM ${tableInput}`;
     connection.query(queryString, function (err, result) {
       if (err) throw err;
       cb(result);
@@ -29,7 +29,6 @@ const orm = {
   },
 
   insertOne: function (tableInput, column, value, cb) {
-    //const stringValue = objToSql(value);
     const queryString = `INSERT INTO ${tableInput} (${column}) VALUES ("${value}");`;
     connection.query(queryString, function (err, result) {
       if (err) throw err;
@@ -38,10 +37,14 @@ const orm = {
   },
 
   updateOne: function (tableInput, condition, value, cb) {
-    let queryString = `UPDATE ${tableInput} SET ${value} `;
+    // Have to use objToSql method to transition value to SQL sytax
+    let queryString = `UPDATE ${tableInput} SET ${objToSql(value)} `;
     queryString += `WHERE ${condition}`;
-    if (err) throw err;
-    cb(result);
+
+    connection.query(queryString, function (err, result) {
+      if (err) throw err;
+      cb(result);
+    });
   },
 };
 
