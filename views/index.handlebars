@@ -1,33 +1,39 @@
 <header>
-    <h1>Burger Test</h1>
+    <h1>Bob's Burgers Burger Eater</h1>
 </header>
 <div class="container">
     <div class="flex-container">
         <section class="avail-burgers">
-            <h2>This should list all available burgers</h2>
+            <h2>Daily Specials</h2>
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li>{{this.burger_name}}
-                    <button class="devour" data-id="{{id}}" data-devoured="{{devoured}}">
-                        {{#if devoured}}Regurgitate{{else}}Devour{{/if}}
-                    </button>
-                    <button class="delete" data-id="{{id}}">Delete</button></li>
+                <li>
+                    <h4><button class="delete" data-id="{{id}}">X</button>
+                        {{burger_name}}
+                        <button class="devour" data-id="{{id}}" data-devoured="{{devoured}}">
+                            {{#if devoured}}Regurgitate{{else}}Devour{{/if}}
+                        </button></h4>
+                    <p class="ingredients"><em>- {{burger_deets}}</em></p>
+                </li>
                 {{/unless}}
                 {{/each}}
             </ul>
         </section>
 
         <section class="devoured-burgers">
-            <h2>This should list all devoured burgers</h2>
+            <h2>Tally Burgers Devoured</h2>
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                <li>{{this.burger_name}}
-                    <button class="regurgitate" data-id="{{id}}" data-devoured="{{devoured}}">
-                        {{#if devoured}}Regurgitate{{else}}Devour{{/if}}
-                    </button>
-                    <button class="delete" data-id="{{id}}">Delete</button></li>
+                <li>
+                    <h4><button class="delete" data-id="{{id}}">X</button>
+                        {{burger_name}}
+                        <button class="regurgitate" data-id="{{id}}" data-devoured="{{devoured}}">
+                            {{#if devoured}}Regurgitate{{else}}Devour{{/if}}
+                        </button></h4>
+                    <p class="ingredients"><em>- {{burger_deets}}</em></p>
+                </li>
                 {{/if}}
                 {{/each}}
             </ul>
@@ -36,13 +42,18 @@
 
     <div class="forms">
         <form class="create-form">
-            <h2>Add a Burger</h2>
+            <h2>Add a Burger to Specials</h2>
             <div class="form-group">
-                <label for="burger-name">Burger Name:</label>
-                <input type="text" id="burger-name">
+                <div class="input-line">
+                    <label for="burger-name">Burger Name:</label>
+                    <input type="text" id="burger-name"></div>
+                <div class="input-line">
+                    <lavel for="burger-deets">Details:</lavel>
+                    <input type="text" id="burger-deets">
+                </div>
             </div>
 
-            <button type="submit">Add Burger</button>
+            <button class="addBurger" type="submit">Add Burger</button>
         </form>
     </div>
 

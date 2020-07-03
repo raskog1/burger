@@ -19,6 +19,12 @@ ul li {
   padding-bottom: 10px;
 }
 
+h1 {
+  margin: 50px 0;
+  font-size: 4em;
+  color: darkblue;
+}
+
 h2 {
   text-align: center;
   margin: 10px;
@@ -32,12 +38,14 @@ h2 {
   position: relative;
   width: 80%;
   margin: auto;
+  padding-top: 20px;
 }
 
 .devoured-burgers,
 .avail-burgers {
-  background-color: lightblue;
+  background-color: cornflowerblue;
   margin: 5px;
+  border: dotted crimson;
 }
 
 .avail-burgers {
@@ -53,7 +61,24 @@ h2 {
 .forms {
   margin: auto;
   width: 40%;
-  height: 100px;
-  background-color: lightblue;
+  height: 150px;
+  background-color: cornflowerblue;
   text-align: center;
+  border: dotted crimson;
+}
+
+.forms h2 {
+  padding-top: 5px;
+}
+
+.input-line {
+  padding: 3px;
+}
+
+.addBurger {
+  margin-top: 10px;
+}
+
+.ingredients {
+  margin-left: 25px;
 }
