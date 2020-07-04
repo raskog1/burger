@@ -1,5 +1,5 @@
 <header>
-    <h1>Bob's Burgers Burger Eater</h1>
+    <h1><strong>Bob's Burgers Burger Eater</strong></h1>
 </header>
 <div class="container">
     <div class="flex-container">
@@ -9,11 +9,13 @@
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li>
-                    <h4><button class="delete" data-id="{{id}}">X</button>
+                    <h4>
                         {{burger_name}}
+                        <i class="fa fa-minus-square delete" data-id="{{id}}" aria-hidden="true"></i>
                         <button class="devour" data-id="{{id}}" data-devoured="{{devoured}}">
                             {{#if devoured}}Regurgitate{{else}}Devour{{/if}}
-                        </button></h4>
+                        </button>
+                    </h4>
                     <p class="ingredients"><em>- {{burger_deets}}</em></p>
                 </li>
                 {{/unless}}
@@ -27,11 +29,14 @@
                 {{#each burgers}}
                 {{#if devoured}}
                 <li>
-                    <h4><button class="delete" data-id="{{id}}">X</button>
+                    {{!-- <h4><button class="delete" data-id="{{id}}">X</button> --}}
+                    <h4>
                         {{burger_name}}
+                        <i class="fa fa-minus-square delete" data-id="{{id}}" aria-hidden="true"></i>
                         <button class="regurgitate" data-id="{{id}}" data-devoured="{{devoured}}">
                             {{#if devoured}}Regurgitate{{else}}Devour{{/if}}
-                        </button></h4>
+                        </button>
+                    </h4>
                     <p class="ingredients"><em>- {{burger_deets}}</em></p>
                 </li>
                 {{/if}}

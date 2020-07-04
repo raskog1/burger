@@ -12,4 +12,6 @@ CREATE TABLE burgers
     burger_deets VARCHAR
     (255),
     devoured BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY
+    (id)
 );

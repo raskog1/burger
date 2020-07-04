@@ -22,7 +22,10 @@ ul li {
 h1 {
   margin: 50px 0;
   font-size: 4em;
-  color: darkblue;
+  background-color: cornflowerblue;
+  height: 120px;
+  line-height: 120px;
+  border: dotted crimson;
 }
 
 h2 {
