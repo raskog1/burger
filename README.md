@@ -18,7 +18,7 @@ https://bobs-burgers-burger-eater.herokuapp.com/
 
 ## Usage
 
-<!-- <img src="/public/assets/images/notetakergif.gif" alt="GIF of using the application"/> -->
+<img src="./public/assets/img/demo.gif" alt="GIF of using the application"/>
 
 Keep a tally as you devour Bob's delicious burgers of the day. Devour the burgers with a click of a button, or regurgitate them in the same manner. Delete the burger when you get tired of it, and add new burgers with original titles and descriptions.
 
